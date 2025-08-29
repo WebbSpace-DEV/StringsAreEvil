@@ -1,0 +1,48 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup Label="Globals">
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <AssemblyName>TrainingHarness.API</AssemblyName>
+    <RootNamespace>StringsAreEvil.API</RootNamespace>
+    <Version>1.0.0.45898</Version>
+    <AssemblyVersion>1.0.0.45898</AssemblyVersion>
+    <FileVersion>1.0.0.45898</FileVersion>
+    <Company>WebbSpace</Company>
+    <Authors>Steven W. Webb</Authors>
+    <Copyright>Copyright © 2025 Steven W. Webb</Copyright>
+    <Product>TrainingHarness</Product>
+    <Description>Contains the Training Harness orchestration layer with its API and its web service endpoints.</Description>
+    <PackageTags>TrainingHarness, API, web API, web service, endpoint</PackageTags>
+    <PackageReleaseNotes>Add API and web service endpoints.</PackageReleaseNotes>
+    <RunAnalyzersDuringBuild>true</RunAnalyzersDuringBuild>
+    <RunAnalyzersDuringLiveAnalysis>false</RunAnalyzersDuringLiveAnalysis>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+    <OutputType>Exe</OutputType>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <NoWarn>1701;1702;1998;1591</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Global.Utility\Global.Utility.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\index.html" />
+  </ItemGroup>
+
+</Project>

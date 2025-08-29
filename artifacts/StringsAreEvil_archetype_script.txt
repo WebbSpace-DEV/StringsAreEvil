@@ -1,0 +1,29 @@
+#
+# Create the solution.
+#
+dotnet new sln -n StringsAreEvil
+
+# At this point, the solution file has VisualStudioVersion set to 16, which is Visual Studio 2019 and suboptimal.
+# Manually changing the value from a blank solution created within the IDE is necessary.
+
+#
+# Create the projects from templates.
+#
+dotnet new classlib -n Global.Utility      -lang "C#" -o Global.Utility      --framework net6.0
+dotnet new classlib -n StringsAreEvil.API -lang "C#" -o StringsAreEvil.API --framework net6.0
+
+#
+# Add the projects to the solution.
+#
+dotnet sln StringsAreEvil.sln add Global.Utility/Global.Utility.csproj
+dotnet sln StringsAreEvil.sln add StringsAreEvil.API/StringsAreEvil.API.csproj
+
+#
+# This is a textual representation of the per-project dependencies.
+#
+# StringsAreEvil.API --> Global.Utility
+
+#
+# Wire up the dependencies.
+#
+dotnet add StringsAreEvil.API/StringsAreEvil.API.csproj   reference Global.Utility/Global.Utility.csproj
