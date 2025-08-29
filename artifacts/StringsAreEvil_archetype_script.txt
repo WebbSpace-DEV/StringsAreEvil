@@ -3,14 +3,11 @@
 #
 dotnet new sln -n StringsAreEvil
 
-# At this point, the solution file has VisualStudioVersion set to 16, which is Visual Studio 2019 and suboptimal.
-# Manually changing the value from a blank solution created within the IDE is necessary.
-
 #
 # Create the projects from templates.
 #
-dotnet new classlib -n Global.Utility      -lang "C#" -o Global.Utility      --framework net6.0
-dotnet new classlib -n StringsAreEvil.API -lang "C#" -o StringsAreEvil.API --framework net6.0
+dotnet new classlib -n Global.Utility     -lang "C#" -o Global.Utility     --framework net8.0
+dotnet new classlib -n StringsAreEvil.API -lang "C#" -o StringsAreEvil.API --framework net8.0
 
 #
 # Add the projects to the solution.
