@@ -1,0 +1,26 @@
+#
+# Create the solution.
+#
+dotnet new sln -n StringsAreEvil
+
+#
+# Create the projects from templates.
+#
+dotnet new classlib -n Global.Utility     -lang "C#" -o Global.Utility     --framework net8.0
+dotnet new classlib -n StringsAreEvil.API -lang "C#" -o StringsAreEvil.API --framework net8.0
+
+#
+# Add the projects to the solution.
+#
+dotnet sln StringsAreEvil.sln add Global.Utility/Global.Utility.csproj
+dotnet sln StringsAreEvil.sln add StringsAreEvil.API/StringsAreEvil.API.csproj
+
+#
+# This is a textual representation of the per-project dependencies.
+#
+# StringsAreEvil.API --> Global.Utility
+
+#
+# Wire up the dependencies.
+#
+dotnet add StringsAreEvil.API/StringsAreEvil.API.csproj   reference Global.Utility/Global.Utility.csproj

@@ -1,0 +1,39 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup Label="Globals">
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <AssemblyName>Global.Utility</AssemblyName>
+    <RootNamespace>Global.Utility</RootNamespace>
+    <Version>1.0.0.45898</Version>
+    <AssemblyVersion>1.0.0.45898</AssemblyVersion>
+    <FileVersion>1.0.0.45898</FileVersion>
+    <Company>WebbSpace</Company>
+    <Authors>Steven W. Webb</Authors>
+    <Copyright>Copyright © 2025 Steven W. Webb</Copyright>
+    <Product>Shared Global Libraries</Product>
+    <Description>Contains global libraries shared across applications.</Description>
+    <PackageTags>global, shared, libraries, utilities</PackageTags>
+    <PackageReleaseNotes>Added new shared utilities.</PackageReleaseNotes>
+    <RunAnalyzersDuringBuild>true</RunAnalyzersDuringBuild>
+    <RunAnalyzersDuringLiveAnalysis>false</RunAnalyzersDuringLiveAnalysis>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" />
+  </ItemGroup>
+
+  <Target Name="PostPack" AfterTargets="Pack" Condition="'$(Configuration)' == 'Release'">
+    <Exec Command="copy &quot;$(ProjectDir)bin\Release\*.nupkg&quot; &quot;$(SolutionDir)Packages\&quot;" />
+  </Target>
+
+</Project>
