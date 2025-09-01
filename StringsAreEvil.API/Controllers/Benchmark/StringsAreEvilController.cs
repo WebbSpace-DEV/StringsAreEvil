@@ -13,15 +13,14 @@ namespace StringsAreEvil.API.Controllers.Benchmark;
 [Route("api/Benchmark/[controller]")]
 public class StringsAreEvilController : ControllerBase
 {
-    private const string _string = ".";
-    private const char _char = '.';
+    private const long _max = 250000;
 
     public StringsAreEvilController()
     {
     }
 
-    [HttpGet("GetProof/{isManaged}/{isString}/{iterations}/", Name = "StringsAreEvilGetProof")]
-    public async Task<IActionResult> StringsAreEvilGetProof(bool isManaged, bool isString, long iterations)
+    [HttpGet("GetProof/{isManaged}/{isString}/{iterations}/", Name = "GetProof")]
+    public IActionResult GetProof(bool isManaged, bool isString, long iterations)
     {
         string output;
         StringBuilder message = new StringBuilder();
@@ -57,16 +56,15 @@ public class StringsAreEvilController : ControllerBase
          */
         timer.Start();
 
+        long max = iterations < _max ? iterations : _max;
+
         if (isString)
         {
             string s = String.Empty;
 
-            for (int i = 0; i < iterations; i++)
+            for (long i = 0; i < max; i++)
             {
                 s += ".";
-                //s += _string;
-                //s += '.';
-                //s += _char;
             }
 
             output = s;
@@ -75,12 +73,9 @@ public class StringsAreEvilController : ControllerBase
         {
             StringBuilder sb = new StringBuilder();
 
-            for (int i = 0; i < iterations; i++)
+            for (int i = 0; i < max; i++)
             {
                 sb.Append(".");
-                //sb.Append(_string);
-                //sb.Append('.');
-                //sb.Append(_char);
             }
 
             output = sb.ToString();
@@ -115,7 +110,7 @@ public class StringsAreEvilController : ControllerBase
         message.AppendFormat("GC: {0} / Type: {1} / Iterations: {2:n0} / Execution Time: {3:n4} ms / Virtual Memory Consumed: {4:n0} bytes",
             isManaged ? "Yes" : "No",
             isString ? "String" : "StringBuilder",
-            iterations,
+            max,
             timer.Elapsed.TotalMilliseconds,
             omega - alpha);
 

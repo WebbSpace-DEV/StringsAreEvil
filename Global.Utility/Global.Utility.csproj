@@ -11,9 +11,9 @@
     <TargetFramework>net8.0</TargetFramework>
     <AssemblyName>Global.Utility</AssemblyName>
     <RootNamespace>Global.Utility</RootNamespace>
-    <Version>1.0.0.45898</Version>
-    <AssemblyVersion>1.0.0.45898</AssemblyVersion>
-    <FileVersion>1.0.0.45898</FileVersion>
+    <Version>1.0.0.45901</Version>
+    <AssemblyVersion>1.0.0.45901</AssemblyVersion>
+    <FileVersion>1.0.0.45901</FileVersion>
     <Company>WebbSpace</Company>
     <Authors>Steven W. Webb</Authors>
     <Copyright>Copyright © 2025 Steven W. Webb</Copyright>

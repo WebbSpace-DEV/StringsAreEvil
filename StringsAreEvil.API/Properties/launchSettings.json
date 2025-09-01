@@ -15,7 +15,7 @@
         "ASPNETCORE_ENVIRONMENT": "Local"
       }
     },
-    "TrainingHarness.API.Development": {
+    "StringsAreEvil.API.Development": {
       "commandName": "Project",
       "launchBrowser": true,
       "applicationUrl": "https://localhost:5001;http://localhost:5000",
@@ -23,7 +23,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "TrainingHarness.API.Testing": {
+    "StringsAreEvil.API.Testing": {
       "commandName": "Project",
       "launchBrowser": false,
       "applicationUrl": "https://localhost:5001;http://localhost:5000",
