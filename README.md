@@ -1,2 +1,2 @@
 # StringsAreEvil
-Demonstration of string immutability versus StringBuilders
+A demonstration of the consequences of string concatenation and immutability compared against the StringBuilder Append() method.
