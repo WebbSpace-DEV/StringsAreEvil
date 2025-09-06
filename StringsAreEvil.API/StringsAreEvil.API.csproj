@@ -11,14 +11,14 @@
     <TargetFramework>net8.0</TargetFramework>
     <AssemblyName>StringsAreEvil.API</AssemblyName>
     <RootNamespace>StringsAreEvil.API</RootNamespace>
-    <Version>1.0.0.45901</Version>
-    <AssemblyVersion>1.0.0.45901</AssemblyVersion>
-    <FileVersion>1.0.0.45901</FileVersion>
+    <Version>1.0.0.45906</Version>
+    <AssemblyVersion>1.0.0.45906</AssemblyVersion>
+    <FileVersion>1.0.0.45906</FileVersion>
     <Company>WebbSpace</Company>
     <Authors>Steven W. Webb</Authors>
     <Copyright>Copyright © 2025 Steven W. Webb</Copyright>
     <Product>StringsAreEvil</Product>
-    <Description>Contains the Training Harness orchestration layer with its API and its web service endpoints.</Description>
+    <Description>Contains the StringsAreEvil orchestration layer with its API and its web service endpoints.</Description>
     <PackageTags>StringsAreEvil, API, web API, web service, endpoint</PackageTags>
     <PackageReleaseNotes>Add API and web service endpoints.</PackageReleaseNotes>
     <RunAnalyzersDuringBuild>true</RunAnalyzersDuringBuild>

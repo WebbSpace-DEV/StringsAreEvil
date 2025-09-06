@@ -4,6 +4,8 @@ using System.Diagnostics;
 using System.Runtime;
 using System.Text;
 using StringsAreEvil.API.DTOs;
+using Global.Utility.Options;
+using Microsoft.Extensions.Options;
 
 namespace StringsAreEvil.API.Controllers.Benchmark;
 
@@ -13,10 +15,11 @@ namespace StringsAreEvil.API.Controllers.Benchmark;
 [Route("api/Benchmark/[controller]")]
 public class StringsAreEvilController : ControllerBase
 {
-    private const long _max = 250000;
+    private long _max;
 
-    public StringsAreEvilController()
+    public StringsAreEvilController(IOptions<AppSettingsOption> options)
     {
+        long.TryParse(options.Value.MaxIterations!, out _max);
     }
 
     [HttpGet("GetProof/{isManaged}/{isString}/{iterations}/", Name = "GetProof")]
